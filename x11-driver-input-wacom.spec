@@ -1,11 +1,11 @@
 Name: x11-driver-input-wacom
 Version: 0.10.4
-Release: %mkrel 3
+Release: %mkrel 4
 Summary: X.org input driver for Wacom tablets
 Group: System/X11
 URL: http://www.x.org/
 Source0: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
-# (fc) 0.10.4-3mdv add support for N-Trig
+# (fc) 0.10.4-4mdv add support for N-Trig
 Patch0: 0001-Add-support-for-N-Trig-tabletPC-from-Ubuntu-forums.patch
 
 License: GPLv2+
