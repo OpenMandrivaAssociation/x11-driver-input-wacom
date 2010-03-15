@@ -4,7 +4,9 @@ Release: %mkrel 3
 Summary: X.org input driver for Wacom tablets
 Group: System/X11
 URL: http://www.x.org/
-Source: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
+Source0: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
+# (fc) 0.10.4-3mdv add support for N-Trig
+Patch0: 0001-Add-support-for-N-Trig-tabletPC-from-Ubuntu-forums.patch
 
 License: GPLv2+
 BuildRoot: %{_tmppath}/%{name}-root
@@ -34,6 +36,7 @@ Development files for %{name}
 
 %prep
 %setup -q -n xf86-input-wacom-%{version}
+%patch0 -p1 -b .ntrig
 
 %build
 %configure2_5x
