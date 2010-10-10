@@ -1,12 +1,10 @@
 Name: x11-driver-input-wacom
-Version: 0.10.6
+Version: 0.10.8
 Release: %mkrel 1
 Summary: X.org input driver for Wacom tablets
 Group: System/X11
 URL: http://www.x.org/
 Source0: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
-# (fc) 0.10.4-4mdv add support for N-Trig
-Patch0: 0001-Add-support-for-N-Trig-tabletPC-from-Ubuntu-forums.patch
 
 License: GPLv2+
 BuildRoot: %{_tmppath}/%{name}-root
@@ -36,7 +34,6 @@ Development files for %{name}
 
 %prep
 %setup -q -n xf86-input-wacom-%{version}
-%patch0 -p1 -b .ntrig
 
 %build
 %configure2_5x
@@ -46,22 +43,22 @@ Development files for %{name}
 rm -rf %{buildroot}
 %makeinstall_std
 
-# rename hal fdi file
-mv %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/wacom.fdi %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/10-wacom.fdi
+mkdir -p %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/
+cp -a conf/wacom.fdi %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/10-wacom.fdi
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_bindir}/xsetwacom
+%{_bindir}/*
 %{_libdir}/xorg/modules/input/wacom_drv.la
 %{_libdir}/xorg/modules/input/wacom_drv.so
-%{_mandir}/man4/wacom.*
+%{_mandir}/man?/*
 %{_datadir}/hal/fdi/policy/20thirdparty/10-wacom.fdi
+%{_datadir}/X11/xorg.conf.d/50-wacom.conf
 
 %files devel
-%{_includedir}/xorg/wacom-properties.h
-%{_includedir}/xorg/Xwacom.h
+%{_includedir}/xorg/*
 %{_libdir}/pkgconfig/xorg-wacom.pc
 
