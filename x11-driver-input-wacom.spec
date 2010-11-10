@@ -1,6 +1,6 @@
 Name: x11-driver-input-wacom
 Version: 0.10.8
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: X.org input driver for Wacom tablets
 Group: System/X11
 URL: http://www.x.org/
@@ -13,6 +13,8 @@ BuildRequires: x11-proto-devel >= 1.0.0
 BuildRequires: x11-server-devel >= 1.0.1
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: libxi-devel
+
+Requires: x11-server-common %(xserver-sdk-abi-requires xinput)
 
 Obsoletes: linuxwacom <= 0.8.4
 Provides: linuxwacom = %{version}-%{release}
