@@ -1,11 +1,10 @@
 Name: x11-driver-input-wacom
-Version: 0.10.8
-Release: %mkrel 3
+Version: 0.10.10
+Release: %mkrel 1
 Summary: X.org input driver for Wacom tablets
 Group: System/X11
 URL: http://www.x.org/
 Source0: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
-
 License: GPLv2+
 BuildRoot: %{_tmppath}/%{name}-root
 
@@ -45,22 +44,22 @@ Development files for %{name}
 rm -rf %{buildroot}
 %makeinstall_std
 
-mkdir -p %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/
-cp -a conf/wacom.fdi %{buildroot}%{_datadir}/hal/fdi/policy/20thirdparty/10-wacom.fdi
-
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_bindir}/*
+%{_bindir}/xsetwacom
+%{_bindir}/isdv4-serial-debugger
 %{_libdir}/xorg/modules/input/wacom_drv.la
 %{_libdir}/xorg/modules/input/wacom_drv.so
-%{_mandir}/man?/*
-%{_datadir}/hal/fdi/policy/20thirdparty/10-wacom.fdi
+%{_mandir}/man4/wacom.4*
+%{_mandir}/man1/xsetwacom.1*
 %{_datadir}/X11/xorg.conf.d/50-wacom.conf
 
 %files devel
 %{_includedir}/xorg/*
+%{_includedir}/xorg/isdv4.h
 %{_libdir}/pkgconfig/xorg-wacom.pc
+
 
