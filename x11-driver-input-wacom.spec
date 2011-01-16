@@ -6,12 +6,13 @@ Group: System/X11
 URL: http://www.x.org/
 Source0: http://prdownloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
 License: GPLv2+
-BuildRoot: %{_tmppath}/%{name}-root
+BuildRoot: %{_tmppath}/%{name}-%{version}
 
 BuildRequires: x11-proto-devel >= 1.0.0
 BuildRequires: x11-server-devel >= 1.0.1
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: libxi-devel
+BuildRequires: libxrandr-devel
 
 Requires: x11-server-common %(xserver-sdk-abi-requires xinput)
 
