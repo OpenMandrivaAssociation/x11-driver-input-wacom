@@ -12,6 +12,8 @@ BuildRequires: x11-server-devel >= 1.0.1
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: libxi-devel
 BuildRequires: udev-devel
+BuildRequires: pkgconfig(xinerama)
+BuildRequires: pkgconfig(x11)
 BuildRequires: libxrandr-devel
 
 Requires: x11-server-common %(xserver-sdk-abi-requires xinput)
