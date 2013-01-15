@@ -1,2 +1,4 @@
+removed_sources:
+  xf86-input-wacom-0.17.0.tar.bz2: 83fc86df97d1279198a7dab9f7d98fceded068ad
 sources:
-  "xf86-input-wacom-0.17.0.tar.bz2": 83fc86df97d1279198a7dab9f7d98fceded068ad
+  xf86-input-wacom-0.19.0.tar.bz2: 57fec6e03365391276338ebdb3d8791f6562a1c4
