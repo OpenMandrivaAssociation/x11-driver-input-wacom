@@ -1,38 +1,38 @@
-Name: x11-driver-input-wacom
-Version: 0.19.0
-Release: 1
-Summary: X.org input driver for Wacom tablets
-Group: System/X11
-License: GPLv2+
-URL: http://www.x.org/
-Source0: http://freefr.dl.sourceforge.net/project/linuxwacom/xf86-input-wacom/xf86-input-wacom-%version.tar.bz2
-Source1: 69-input-wacom.rules
+Name:		x11-driver-input-wacom
+Version:	0.19.0
+Release:	2
+Summary:	X.org input driver for Wacom tablets
+Group:		System/X11
+License:	GPLv2+
+URL:		http://www.x.org/
+Source0:	http://freefr.dl.sourceforge.net/project/linuxwacom/xf86-input-wacom/xf86-input-wacom-%version.tar.bz2
+Source1:	69-input-wacom.rules
 
-BuildRequires: x11-proto-devel >= 1.0.0
-BuildRequires: x11-util-macros >= 1.0.1
-BuildRequires: pkgconfig(libudev)
-BuildRequires: pkgconfig(x11)
-BuildRequires: pkgconfig(xi)
-BuildRequires: pkgconfig(xinerama)
-BuildRequires: pkgconfig(xorg-server) >= 1.12
-BuildRequires: pkgconfig(xrandr)
+BuildRequires:	x11-proto-devel >= 1.0.0
+BuildRequires:	x11-util-macros >= 1.0.1
+BuildRequires:	pkgconfig(libudev)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xi)
+BuildRequires:	pkgconfig(xinerama)
+BuildRequires:	pkgconfig(xorg-server) >= 1.12
+BuildRequires:	pkgconfig(xrandr)
 
-Requires: x11-server-common %(xserver-sdk-abi-requires xinput)
+Requires:	x11-server-common %(xserver-sdk-abi-requires xinput)
 
-Obsoletes: linuxwacom <= 0.8.4
-Provides: linuxwacom = %{version}-%{release}
+Obsoletes:	linuxwacom <= 0.8.4
+Provides:	linuxwacom = %{version}-%{release}
 
 
 %description
 X.Org X11 wacom input driver for Wacom tablets.
 
 %package devel
-Summary: Development files for %{name}
-Group: Development/X11
-License: MIT
+Summary:	Development files for %{name}
+Group:		Development/X11
+License:	MIT
 
 %description devel
-Development files for %{name}
+Development files for %{name}.
 
 %prep
 %setup -q -n xf86-input-wacom-%{version}
