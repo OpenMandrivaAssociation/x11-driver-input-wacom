@@ -1,0 +1,12 @@
+diff -Naur xf86-input-wacom-0.19.0/src/Makefile.am xf86-input-wacom-0.19.0.tpg/src/Makefile.am
+--- xf86-input-wacom-0.19.0/src/Makefile.am	2012-10-15 21:26:44.000000000 +0000
++++ xf86-input-wacom-0.19.0.tpg/src/Makefile.am	2013-03-08 17:24:05.978718024 +0000
+@@ -28,7 +28,7 @@
+ include common.mk
+ 
+ @DRIVER_NAME@_drv_la_LTLIBRARIES = @DRIVER_NAME@_drv.la
+-@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version
++@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version -lX11 -lXi
+ @DRIVER_NAME@_drv_ladir = @inputdir@
+ 
+ AM_CPPFLAGS=-I$(top_srcdir)/include/
