@@ -36,6 +36,7 @@ Development files for %{name}.
 %apply_patches
 
 %build
+mkdir -p m4
 autoreconf -fiv
 
 %configure2_5x
