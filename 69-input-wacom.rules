@@ -1,4 +1,0 @@
-ACTION=="add|change", SUBSYSTEM=="pnp", ATTR{id}=="WACf*", ENV{NAME}="Serial Wacom Tablet"
-ACTION=="add|change", SUBSYSTEM=="pnp", ATTR{id}=="FUJ*", ENV{NAME}="Serial Wacom Tablet"
-ACTION=="add|change", SUBSYSTEMS=="pnp", ATTRS{id}=="WACf*", ENV{ID_INPUT}="1", ENV{ID_INPUT_TABLET}="1", ENV{x11_driver}="wacom"
-ACTION=="add|change", SUBSYSTEMS=="pnp", ATTRS{id}=="FUJ*", ENV{ID_INPUT}="1", ENV{ID_INPUT_TABLET}="1", ENV{x11_driver}="wacom"

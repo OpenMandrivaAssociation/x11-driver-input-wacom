@@ -1,12 +1,11 @@
 Name:		x11-driver-input-wacom
-Version:	0.23.0
-Release:	6
+Version:	0.24.0
+Release:	1
 Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
 License:	GPLv2+
 URL:		http://www.x.org/
 Source0:	http://freefr.dl.sourceforge.net/project/linuxwacom/xf86-input-wacom/xf86-input-wacom-%version.tar.bz2
-Source1:	69-input-wacom.rules
 Patch0:		xf86-input-wacom-0.19.0-fix-linking.patch
 BuildRequires:	x11-proto-devel >= 1.0.0
 BuildRequires:	x11-util-macros >= 1.0.1
@@ -39,12 +38,14 @@ Development files for %{name}.
 mkdir -p m4
 autoreconf -fiv
 
-%configure2_5x
+%configure2_5x \
+	--with-systemd-unit-dir=%{_unitdir} \
+	--with-udev-rules-dir=%{_udevrulesdir}
 %make
 
 %install
 %makeinstall_std
-install -m 644 -D %{SOURCE1} %{buildroot}/lib/udev/rules.d/69-input-wacom.rules
+mv %{buildroot}/%{_udevrulesdir}/wacom.rules %{buildroot}/%{_udevrulesdir}/70-wacom.rules
 
 %files
 %{_bindir}/xsetwacom
@@ -53,7 +54,10 @@ install -m 644 -D %{SOURCE1} %{buildroot}/lib/udev/rules.d/69-input-wacom.rules
 %{_mandir}/man4/wacom.4*
 %{_mandir}/man1/xsetwacom.1*
 %{_datadir}/X11/xorg.conf.d/50-wacom.conf
-/lib/udev/rules.d/69-input-wacom.rules
+%{_bindir}/isdv4-serial-inputattach
+/lib/udev/rules.d/70-wacom.rules
+%{_unitdir}/wacom-inputattach@.service
+
 
 %files devel
 %{_includedir}/xorg/*
