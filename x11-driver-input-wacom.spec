@@ -1,5 +1,5 @@
 Name:		x11-driver-input-wacom
-Version:	0.26.1
+Version:	0.27.0
 Release:	1
 Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
@@ -38,7 +38,7 @@ Development files for %{name}.
 mkdir -p m4
 autoreconf -fiv
 
-%configure2_5x \
+%configure \
 	--with-systemd-unit-dir=%{_unitdir} \
 	--with-udev-rules-dir=%{_udevrulesdir}
 %make
@@ -57,7 +57,6 @@ mv %{buildroot}/%{_udevrulesdir}/wacom.rules %{buildroot}/%{_udevrulesdir}/70-wa
 %{_bindir}/isdv4-serial-inputattach
 /lib/udev/rules.d/70-wacom.rules
 %{_unitdir}/wacom-inputattach@.service
-
 
 %files devel
 %{_includedir}/xorg/*
