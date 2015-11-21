@@ -1,6 +1,6 @@
 Name:		x11-driver-input-wacom
 Version:	0.29.0
-Release:	2
+Release:	3
 Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
 License:	GPLv2+
@@ -13,7 +13,7 @@ BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xi)
 BuildRequires:	pkgconfig(xinerama)
-BuildRequires:	pkgconfig(xorg-server) >= 1.12
+BuildRequires:	pkgconfig(xorg-server) >= 1.18
 BuildRequires:	pkgconfig(xrandr)
 Requires:	x11-server-common %(xserver-sdk-abi-requires xinput)
 Obsoletes:	linuxwacom <= 0.8.4
