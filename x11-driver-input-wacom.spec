@@ -1,6 +1,6 @@
 Name:		x11-driver-input-wacom
-Version:	0.32.0
-Release:	1
+Version:	0.33.0
+Release:	2
 Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
 License:	GPLv2+
@@ -53,7 +53,7 @@ mv %{buildroot}/%{_udevrulesdir}/wacom.rules %{buildroot}/%{_udevrulesdir}/70-wa
 %{_libdir}/xorg/modules/input/wacom_drv.so
 %{_mandir}/man4/wacom.4*
 %{_mandir}/man1/xsetwacom.1*
-%{_datadir}/X11/xorg.conf.d/50-wacom.conf
+%{_datadir}/X11/xorg.conf.d/70-wacom.conf
 %{_bindir}/isdv4-serial-inputattach
 /lib/udev/rules.d/70-wacom.rules
 %{_unitdir}/wacom-inputattach@.service
