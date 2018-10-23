@@ -5,7 +5,7 @@ Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
 License:	GPLv2+
 URL:		http://www.x.org/
-Source0:	http://freefr.dl.sourceforge.net/project/linuxwacom/xf86-input-wacom/xf86-input-wacom-%version.tar.bz2
+Source0:	https://github.com/linuxwacom/xf86-input-wacom/archive/xf86-input-wacom-%{version}.tar.gz
 Patch0:		xf86-input-wacom-0.19.0-fix-linking.patch
 BuildRequires:	x11-proto-devel >= 1.0.0
 BuildRequires:	x11-util-macros >= 1.0.1
@@ -31,7 +31,7 @@ License:	MIT
 Development files for %{name}.
 
 %prep
-%setup -q -n xf86-input-wacom-%{version}
+%setup -q -n xf86-input-wacom-xf86-input-wacom-%{version}
 %apply_patches
 
 %build
