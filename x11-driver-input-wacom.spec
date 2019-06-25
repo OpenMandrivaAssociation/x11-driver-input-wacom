@@ -1,5 +1,5 @@
 Name:		x11-driver-input-wacom
-Version:	0.36.1
+Version:	0.37.0
 Release:	2
 Summary:	X.org input driver for Wacom tablets
 Group:		System/X11
