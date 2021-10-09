@@ -31,8 +31,7 @@ License:	MIT
 Development files for %{name}.
 
 %prep
-%setup -q -n xf86-input-wacom-xf86-input-wacom-%{version}
-%autopatch -p1
+%autosetup -n xf86-input-wacom-%{version} -p1
 
 %build
 mkdir -p m4
