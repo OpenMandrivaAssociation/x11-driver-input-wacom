@@ -1,4 +1,6 @@
 %global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+%define _disable_ld_no_undefined 1
+
 
 Name:		x11-driver-input-wacom
 Version:	1.2.4
