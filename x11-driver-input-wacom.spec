@@ -1,3 +1,5 @@
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+
 Name:		x11-driver-input-wacom
 Version:	1.2.4
 Release:	1
